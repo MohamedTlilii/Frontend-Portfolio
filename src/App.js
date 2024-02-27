@@ -13,9 +13,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={
         
-        // <AdminRoute>
+        <AdminRoute>
         <Admin />
-        // </AdminRoute>
+         </AdminRoute>
         
         
         } />

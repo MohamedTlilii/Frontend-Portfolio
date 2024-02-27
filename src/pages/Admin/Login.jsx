@@ -12,8 +12,14 @@ function Login() {
   const handleLogin = () => {
     setLoading(true);
     axios
-      .post("https://backend-portfolio-bxkp.onrender.com/api/admin/login", loginData)
+      .post(
+        "https://backend-portfolio-bxkp.onrender.com/api/admin/login",
+        loginData
+      )
       .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("isAdmin", res.data.isAdmin ? "true" : "false");
+
         // localStorage.setItem("isAdmin", res.data.data.isAdmin);
         // localStorage.setItem("token", res.data.data.token);
         // localStorage.setItem("isBanned", res.data.data.isBanned);
@@ -37,13 +43,13 @@ function Login() {
         setTimeout(() => {
           setError("");
         }, 8000);
-      })
+      });
   };
   return (
-    <div className="md:px-[200px] md:py-[135px]">
+    <div className="flex justify-center items-center h-screen width">
       <Form
         size="large"
-        className="border-2 border-slate-300 md:w-[60%] md:m-auto p-12 rounded-2xl"
+        className="border-2 border-slate-300 w-[500px] p-12 rounded-2xl md:w-[500px]"
         onChange={(e) => {
           setLoginData({ ...loginData, [e.target.name]: e.target.value });
         }}
