@@ -1,15 +1,14 @@
-import React from "react";
 import { Form } from "antd";
+// import axios from "axios";
 
 
 function AdminIntro() {
-  
   return (
     <div>
       <Form
-        // onFinish={onFinish}
+        // data={data}
         layout="vertical"
-        // initialValues={portfolioData.intro}
+        // initialValues={data}
       >
         <Form.Item name="welcomeText" label="Welcome Text">
           <input placeholder="Welcome Text" />
