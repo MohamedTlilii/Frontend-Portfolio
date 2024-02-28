@@ -1,24 +1,48 @@
 import React from "react";
 import SectionTitle from "../../components/SectionTitle";
+import { url } from "../../utils/url";
+import { useFetch } from "../../utils/useFetch";
 
 function Contact() {
- 
+  const { data, loading } = useFetch(`${url}contact`); // Modify to get loading state
+
   return (
-    <div>
-      <SectionTitle title="Say Hello" />
+    <div className="contact-container">
+      <SectionTitle title="Say Hello" className="contact-section-title" />
 
       <div className="flex sm:flex-col items-center justify-between">
-        <div className="flex flex-col gap-1">
-          <p className="text-tertiary">{"{"}</p>
-          {/* {Object.keys(contacts).map((key) => (
-            <p className="ml-5">
-              <span className="text-tertiary">{key} : </span>
-              <span className="text-tertiary"> {contacts[key]}</span>
-            </p>
-          ))} */}
-          <p className="text-tertiary">{"}"}</p>
+        <div className="contact-details">
+          {loading && <p>Loading...</p>}
+          {!loading && Array.isArray(data) && data.length > 0 && (
+            <>
+              {data.map((contact) => (
+                <div key={contact._id} className="contact-info">
+                  <p className="contact-braces">{"{"}</p>
+
+                  <p className="ml-5">
+                    <span className="contact-key">Name: </span>
+                    <span className="contact-value">{contact.name}</span>
+                  </p>
+                  <p className="ml-5">
+                    <span className="contact-key">Email: </span>
+                    <span className="contact-value">{contact.email}</span>
+                  </p>
+                  <p className="ml-5">
+                    <span className="contact-key">Phone: </span>
+                    <span className="contact-value">{contact.mobile}</span>
+                  </p>
+                  <p className="ml-5">
+                    <span className="contact-key">Country: </span>
+                    <span className="contact-value">{contact.country}</span>
+                  </p>
+                  <p className="contact-braces">{"}"}</p>
+                </div>
+              ))}
+            </>
+          )}
+          {!loading && !Array.isArray(data) && <p>No data available</p>}
         </div>
-        <div className="h-[500px]">
+        <div className="contact-animation">
           <lottie-player
             src="https://assets9.lottiefiles.com/packages/lf20_eroqjb7w.json"
             background="transparent"

@@ -2,23 +2,23 @@ import React from "react";
 
 function LeftSider() {
   return (
-    <div className="fixed left-0 bottom-0 px-10 sm:static">
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="left-sider-container">
+      <div className="left-sider-content">
+        <div className="left-sider-links">
           <a href="https://www.facebook.com/mohamed.tliliiiii/">
-            <i class="ri-facebook-circle-line text-gray-400 "></i>
+            <i className="ri-facebook-circle-line"></i>
           </a>
           <a href="mailto:mohamedtlili1995@hotmail.com">
-            <i class="ri-mail-line text-gray-400 "></i>
+            <i className="ri-mail-line"></i>
           </a>
           <a href="https://www.linkedin.com/in/mohamed-tlili-/">
-            <i class="ri-linkedin-box-line text-gray-400 "></i>
+            <i className="ri-linkedin-box-line"></i>
           </a>
           <a href="https://github.com/MohamedTlilii?tab=repositories">
-            <i class="ri-github-line text-gray-400 "></i>
+            <i className="ri-github-line"></i>
           </a>
         </div>
-        <div className="w-[1px] h-32 bg-[#125f63] sm:hidden"></div>
+        <div className="left-sider-divider"></div>
       </div>
     </div>
   );

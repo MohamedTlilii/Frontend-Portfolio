@@ -2,18 +2,20 @@ import React from "react";
 import SectionTitle from "../../components/SectionTitle";
 import { url } from "../../utils/url";
 import { useFetch } from "../../utils/useFetch";
+// import "./About.css";
 
 function About() {
   const { data } = useFetch(`${url}about`);
-  const { lottieURL, description1, description2, skills } = (data && data[0]) || {};
+  const { lottieURL, description1, description2, skills } =
+    (data && data[0]) || {};
 
   // console.log("Lottie URL:", lottieURL);
 
   return (
-    <div>
-      <SectionTitle title="About" />
-      <div className="flex w-full items-center gap-10 sm:flex-col">
-        <div className="h-[60vh] w-1/2 sm:w-full">
+    <div className="about-container">
+      <SectionTitle title="About" className="about-section-title" />
+      <div className="about-content">
+        <div className="about-lottie">
           {lottieURL && (
             <lottie-player
               src={lottieURL}
@@ -24,20 +26,20 @@ function About() {
             ></lottie-player>
           )}
         </div>
-        <div className="flex flex-col gap-5 w-1/2 sm:w-full">
+        <div className="about-description">
           <p className="text-white">{description1}</p>
           <p className="text-white">{description2}</p>
         </div>
       </div>
-      <div className="py-5">
-        <h1 className="text-tertiary text-xl">
+      <div className="about-skills">
+        <h1 className="about-skills-title">
           Here are a few technologies I've been working with recently:
         </h1>
-        <div className="flex flex-wrap gap-10 mt-5">
+        <div className="about-skills-list">
           {Array.isArray(skills) &&
             skills.map((skill, index) => (
-              <div className="border border-tertiary p-3" key={index}>
-                <h1 className="text-tertiary">{skill}</h1>
+              <div className="about-skill-item" key={index}>
+                <h1 className="about-skill-item-text">{skill}</h1>
               </div>
             ))}
         </div>

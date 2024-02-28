@@ -4,7 +4,9 @@ import { url } from "../../utils/url";
 import { useFetch } from "../../utils/useFetch";
 
 function Projects() {
-  const { data } = useFetch("https://backend-portfolio-bxkp.onrender.com/api/data/projects");
+  const { data } = useFetch(
+    "https://backend-portfolio-bxkp.onrender.com/api/data/projects"
+  );
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
   if (!data || !Array.isArray(data) || data.length === 0) {
@@ -12,46 +14,41 @@ function Projects() {
   }
 
   return (
-    <div>
-      <SectionTitle title="Projects" />
-      <div className="flex py-10 gap-20 sm:flex-col">
-        <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
+    <div className="projects-container">
+      <SectionTitle title="Projects" className="projects-section-title" />
+      <div className="flex py-10 gap-20 sm:flex-col projects-list">
+        <ul>
           {data.map((project, index) => (
-            <div
-              onClick={() => {
-                setSelectedItemIndex(index);
-              }}
-              className="cursor-pointer"
-              key={index}
+            <li
+              key={index} // Add key prop for each element in the array
+              onClick={() => setSelectedItemIndex(index)}
+              className={`project-item ${
+                selectedItemIndex === index ? "selected" : ""
+              }`}
             >
-              <h1
-                className={`text-xl px-5
-                  ${
-                    selectedItemIndex === index
-                      ? "text-tertiary border-tertiary border-l-4 -ml-[3px] bg-[#1a7f5a31] py-3 "
-                      : "text-white"
-                  }`}
-              >
-                {project.title}
-              </h1>
-            </div>
+              <h1>{project.title}</h1>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div className="flex items-center justify-center gap-10 sm:flex-col">
+        <div className="project-details">
           <img
             src={data[selectedItemIndex].image}
             alt=""
-            className="h-60 w-72"
+            className="project-image"
           />
-          <div className="flex flex-col gap-5">
-            <h1 className="text-secondary text-2xl">
-              {data[selectedItemIndex].title}
-            </h1>
-            <p className="text-white text-2xl">
-              {data[selectedItemIndex].description}
-            </p>
-            {/* You can include other project details like technologies, link, etc. */}
+          <div className="project-description">
+            <h1>{data[selectedItemIndex].title}</h1>
+            <p>{data[selectedItemIndex].description}</p>
+
+            <a
+              style={{ color: " #f97316" }}
+              href="https://eco-ride-electric-scooter.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Website
+            </a>
           </div>
         </div>
       </div>
