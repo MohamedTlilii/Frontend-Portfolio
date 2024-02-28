@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
 
 function Header() {
   return (
-    <div className='p-5 bg-primary flex justify-center'>
-      <h1 className='text-secondary text-4xl font-semibold mr-2'>M</h1>
-      <h1 className='text-white text-4xl font-semibold'>T</h1>
+    <div className="header-container">
+      <div className="header-text">
+        <h1 className="first-letter">M</h1>
+        <h1 className="second-letter">T</h1>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,14 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+body {
+  background-color: #0a192f;
+  /* margin: 200px; */
+}
+.headr h1 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 /* INTRO */
 .intro-container {
   height: 80vh;
@@ -423,3 +431,108 @@
 }
 
 /* LEFTSIDER */
+/* SECTION TITLE */
+.section-title-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.section-title-text {
+  font-size: 1.5rem;
+  color: #f97316;
+}
+
+.section-title-divider {
+  width: 6rem;
+  height: 1px;
+  background-color: #38a169;
+}
+
+@media (max-width: 768px) {
+  .section-title-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-title-divider {
+    width: 100%;
+    height: 1px;
+    margin-top: 1rem;
+  }
+}
+/* SECTION TITLE */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a192f;
+  z-index: 10000;
+}
+
+.loader-text {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.loader-text h1 {
+  margin: 0;
+}
+
+.loader-text h1:first-child {
+  color: #f97316; /* Orange color for "M" */
+}
+
+.loader-text h1:last-child {
+  color: #fff; /* White color for "T" */
+}
+
+@media (max-width: 768px) {
+  .loader-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* SECTION TITLE */
+/* HEADER */
+.header-container {
+  padding: 1.25rem;
+  background-color: #0a192f;
+  display: flex;
+  justify-content: center;
+}
+
+.header-text {
+  display: flex;
+  align-items: center;
+}
+
+.header-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.header-text .first-letter {
+  color: #f97316; /* Secondary color for "M" */
+}
+
+.header-text .second-letter {
+  color: #fff; /* White color for "T" */
+}
+
+@media (max-width: 768px) {
+  .header-text h1 {
+    font-size: 1.5rem;
+  }
+}
+/* HEADER */
