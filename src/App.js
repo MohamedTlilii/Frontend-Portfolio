@@ -6,7 +6,7 @@ import Register from "./pages/Admin/Register";
 import Login from "./pages/Admin/Login";
 import AdminRoute from "./routes/AdminRoute";
 import Loader from "./components/Loader";
-
+import './App.css'
 function App() {
   const [loading, setLoading] = useState(true);
 

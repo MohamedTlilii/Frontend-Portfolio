@@ -1,0 +1,95 @@
+.intro-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.loading-spinner-container {
+  height: 580px;
+}
+
+.loading-spinner {
+  position: relative;
+  left: 460px;
+  top: 250px;
+}
+
+.intro-welcome-text {
+  color: #ffffff;
+  font-size: 2.25rem; /* 36px */
+  font-weight: 600;
+}
+
+.intro-name {
+  font-size: 5.25rem; /* 84px */
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.intro-caption {
+  font-size: 5.25rem; /* 84px */
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.intro-description {
+  color: #ffffff;
+  width: 66.666667%; /* 2/3 */
+  font-size: 1.125rem; /* 18px */
+}
+
+.intro-button {
+  border: 2px solid #38a169;
+  color: #38a169;
+  padding: 0.75rem 2.5rem; /* 12px 40px */
+  border-radius: 0.25rem; /* 4px */
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  .intro-welcome-text {
+    font-size: 1.875rem; /* 30px */
+  }
+
+  .intro-name,
+  .intro-caption {
+    font-size: 1.875rem; /* 30px */
+  }
+
+  .intro-description {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+@media (min-width: 768px) {
+  .intro-welcome-text {
+    font-size: 2.5rem; /* 40px */
+  }
+
+  .intro-name,
+  .intro-caption {
+    font-size: 3rem; /* 48px */
+  }
+
+  .intro-description {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro-welcome-text {
+    font-size: 3rem; /* 48px */
+  }
+
+  .intro-name,
+  .intro-caption {
+    font-size: 4.5rem; /* 72px */
+  }
+
+  .intro-description {
+    font-size: 1.25rem; /* 20px */
+  }
+}
