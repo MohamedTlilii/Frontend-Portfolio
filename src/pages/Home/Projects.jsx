@@ -16,7 +16,7 @@ function Projects() {
   return (
     <div className="projects-container">
       <SectionTitle title="Projects" className="projects-section-title" />
-      <div className="flex py-10 gap-20 sm:flex-col projects-list">
+      <div className="projects-list">
         <ul>
           {data.map((project, index) => (
             <li
@@ -42,7 +42,7 @@ function Projects() {
             <p>{data[selectedItemIndex].description}</p>
 
             <a
-              style={{ color: " #f97316" }}
+              className="project-link"
               href="https://eco-ride-electric-scooter.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"

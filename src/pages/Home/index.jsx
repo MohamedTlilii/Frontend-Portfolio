@@ -14,18 +14,15 @@ function Home() {
   return (
     <div>
       <Header />
-      {/* {data && ( */}
-        <div className="bg-primary px-40 sm:px-5">
-          <Intro />
-          <About />
-          <Experiences />
-          <Projects />
-          <Contact />
-          <Footer />
-          <LeftSider />
-          
-        </div>
-      {/* )} */}
+      <div className="background-container">
+        <Intro />
+        <About />
+        <Experiences />
+        <Projects />
+        <Contact />
+        <Footer />
+        <LeftSider />
+      </div>
     </div>
   );
 }

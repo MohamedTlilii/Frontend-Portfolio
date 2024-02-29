@@ -2,13 +2,13 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="py-10">
-      <div className="h-[1px] w-full bg-gray-700"></div>
+    <div className="footer-container">
+      <div className="horizontal-line"></div>
 
-      <div className="flex items-center justify-center flex-col mt-10 opacity-70 ">
-        <h1 className="text-white">Developed By</h1>
-        <h1 className="text-white ">
-          <span className="text-white">Mohamed Tlili</span>
+      <div className="footer-content">
+        <h1 className="footer-title">Developed By</h1>
+        <h1 className="footer-text">
+          <span className="footer-name">Mohamed Tlili</span>
         </h1>
       </div>
     </div>

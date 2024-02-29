@@ -4,13 +4,13 @@ import { url } from "../../utils/url";
 import { useFetch } from "../../utils/useFetch";
 
 function Contact() {
-  const { data, loading } = useFetch(`${url}contact`); // Modify to get loading state
+  const { data, loading } = useFetch(`${url}contact`);
 
   return (
     <div className="contact-container">
       <SectionTitle title="Say Hello" className="contact-section-title" />
 
-      <div className="flex sm:flex-col items-center justify-between">
+      <div className="contact-content">
         <div className="contact-details">
           {loading && <p>Loading...</p>}
           {!loading && Array.isArray(data) && data.length > 0 && (
@@ -19,19 +19,19 @@ function Contact() {
                 <div key={contact._id} className="contact-info">
                   <p className="contact-braces">{"{"}</p>
 
-                  <p className="ml-5">
+                  <p className="contact-detail">
                     <span className="contact-key">Name: </span>
                     <span className="contact-value">{contact.name}</span>
                   </p>
-                  <p className="ml-5">
+                  <p className="contact-detail">
                     <span className="contact-key">Email: </span>
                     <span className="contact-value">{contact.email}</span>
                   </p>
-                  <p className="ml-5">
+                  <p className="contact-detail">
                     <span className="contact-key">Phone: </span>
                     <span className="contact-value">{contact.mobile}</span>
                   </p>
-                  <p className="ml-5">
+                  <p className="contact-detail">
                     <span className="contact-key">Country: </span>
                     <span className="contact-value">{contact.country}</span>
                   </p>

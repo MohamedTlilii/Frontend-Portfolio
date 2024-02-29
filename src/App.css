@@ -1,16 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,200;1,500;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100&display=swap");
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 15px;
 }
 body {
-  background-color: #0a192f;
-  /* margin: 200px; */
+  background-color: #0a192f; /* Set your desired background color */
 }
-.headr h1 {
+
+/* .headr h1 {
   margin: 0 !important;
   padding: 0 !important;
+} */
+/* HOME */
+.background-container {
+  background-color: #0a192f; /* Set your desired background color */
+  padding-left: 40px; /* Equivalent to px-40 */
+  padding-right: 40px; /* Equivalent to px-40 */
+  margin: 50px;
 }
+
+/* Responsive CSS */
+@media (max-width: 640px) {
+  .background-container {
+    padding-left: 5px; /* Override padding for smaller screens */
+    padding-right: 5px; /* Override padding for smaller screens */
+  }
+}
+
+/* HOME */
 /* INTRO */
 .intro-container {
   height: 80vh;
@@ -139,6 +157,9 @@ body {
 .about-description {
   color: #ffffff;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .about-skills {
@@ -187,8 +208,13 @@ body {
 .experiences-container {
   padding-top: 2rem;
 }
-
+.flex-container {
+  display: flex;
+  padding-top: 1.5rem; /* Adjust as needed */
+  gap: 250px; /* Equivalent to gap-20 */
+}
 .experiences-section-title {
+  
   color: #ffffff;
   font-size: 2rem;
   font-weight: 600;
@@ -204,6 +230,7 @@ body {
 
 .experience-item {
   cursor: pointer;
+  width: 250px;
 }
 
 .experience-item h1 {
@@ -246,10 +273,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  .experiences-list {
+  /* Adjusting flex-direction for smaller screens */
+  .flex-container {
     flex-direction: column;
   }
 
+  /* Adjusting font size for smaller screens */
   .experience-item h1 {
     font-size: 1rem;
   }
@@ -262,11 +291,12 @@ body {
 }
 /* EXPERIENCES */
 /* PROJECTS */
-
+/* Projects Container */
 .projects-container {
   padding-top: 2rem;
 }
 
+/* Section Title */
 .projects-section-title {
   color: #ffffff;
   font-size: 2rem;
@@ -274,15 +304,17 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Projects List */
 .projects-list {
   display: flex;
   padding: 0;
   list-style: none;
-  gap: 1.5rem;
 }
 
+/* Project Item */
 .project-item {
   cursor: pointer;
+  
 }
 
 .project-item h1 {
@@ -290,55 +322,88 @@ body {
   padding: 0 0.75rem;
   color: #ffffff;
   transition: color 0.3s ease;
+  
 }
 
-.project-item h1:hover,
 .project-item.selected h1 {
   color: #38a169;
-}
-
-.project-item.selected h1 {
   border-left: 4px solid #38a169;
   background-color: #1a7f5a31;
   margin-left: -3px;
+  width: 250px;
 }
 
+/* Project Details */
 .project-details {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Adjust as needed */
+  
 }
 
+/* Project Image */
 .project-image {
   height: 15rem;
   width: 18rem;
 }
 
+/* Project Description */
 .project-description {
   color: #ffffff;
-  font-size: 1.125rem;
+  /* border: 2px solid red; */
+display: flex;
+flex-direction: column;
+gap: 10px;
+
 }
 
+.project-description h1 {
+  font-size: 1.5rem; /* Adjust as needed */
+  color: #f97316;
+
+}
+
+.project-description p {
+  font-size: 1.125rem; /* Adjust as needed */
+}
+
+/* Project Link */
+.project-link {
+  /* color: #f97316; */
+  color: #38a169;
+
+}
+
+/* Responsive CSS */
 @media (max-width: 768px) {
+  /* Projects List for smaller screens */
   .projects-list {
     flex-direction: column;
+    gap: 10px; /* Adjust as needed */
   }
 
+  /* Adjusting font sizes for smaller screens */
   .project-item h1 {
-    font-size: 1rem;
+    font-size: 1rem; /* Adjust as needed */
   }
 
-  .project-description {
-    font-size: 1rem;
+  .project-description h1 {
+    font-size: 1.25rem; /* Adjust as needed */
+  }
+
+  .project-description p {
+    font-size: 1rem; /* Adjust as needed */
   }
 }
+
+
 /* PROJECTS */
 /* CONTACT */
 .contact-container {
   padding-top: 2rem;
 }
 
+/* Section Title */
 .contact-section-title {
   color: #ffffff;
   font-size: 2rem;
@@ -346,35 +411,62 @@ body {
   margin-bottom: 2rem;
 }
 
-.contact-details {
+/* Contact Content */
+.contact-content {
+  /* margin: 20px; */
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  justify-content: flex-end;
+  /* gap: 150px; */
+  align-items: center;
+}
+
+/* Contact Details */
+.contact-details {
+  flex: 1;
+  margin-right: 20px; /* Adjust as needed for spacing */
+}
+
+.contact-info {
+  margin-bottom: 1rem;
 }
 
 .contact-braces {
-  color: #38a169;
+  font-size: 1.25rem;
+  color: #38a169;}
+
+.contact-detail {
+  margin-left: 5px;
 }
 
 .contact-key {
+  font-weight: bold;
   color: #38a169;
 }
 
 .contact-value {
-  color: #ffffff;
+  color: #38a169;
 }
 
-.contact-animation {
-  height: 500px;
-}
+/* Contact Animation */
+/* .contact-animation {
+  flex: 1;
+  border:  2px solid red;
 
+} */
+
+/* Responsive CSS */
 @media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
   .contact-details {
-    align-items: center;
+    margin-right: 0;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
   }
 
   .contact-animation {
-    margin-top: 2rem;
+    order: -1; /* Move animation above details on small screens */
   }
 }
 /* CONTACT */
@@ -407,7 +499,7 @@ body {
 .left-sider-divider {
   width: 1px;
   height: 8rem;
-  background-color: #125f63;
+  /* background-color: #125f63; */
 }
 
 @media (min-width: 640px) {
@@ -536,3 +628,58 @@ body {
   }
 }
 /* HEADER */
+/* FOOTER */
+.footer-container {
+  padding-top: 2.5rem; /* Equivalent to py-10 */
+  padding-bottom: 2.5rem; /* Equivalent to py-10 */
+}
+
+/* Horizontal Line */
+.horizontal-line {
+  height: 1px;
+  width: 100%;
+  background-color: #4b5563; /* Equivalent to bg-gray-700 */
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1.25rem; /* Equivalent to mt-10 */
+  opacity: 0.7; /* Equivalent to opacity-70 */
+}
+
+/* Footer Title */
+.footer-title {
+  color: #ffffff; /* Equivalent to text-white */
+}
+
+/* Footer Text */
+.footer-text {
+  color: #ffffff; /* Equivalent to text-white */
+}
+
+/* Footer Name */
+.footer-name {
+  color: #ffffff; /* Equivalent to text-white */
+}
+/* For medium screens and above */
+@media (min-width: 768px) {
+  .footer-container {
+    padding-top: 3.75rem; /* Adjust padding for responsiveness */
+    padding-bottom: 3.75rem; /* Adjust padding for responsiveness */
+  }
+
+  .footer-content {
+    margin-top: 2.5rem; /* Adjust margin for responsiveness */
+  }
+}
+
+/* FOOTER */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}

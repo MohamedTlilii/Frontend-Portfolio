@@ -16,7 +16,7 @@ function Experiences() {
     <div className="experiences-container">
       <SectionTitle title="Experience" className="experiences-section-title" />
 
-      <div className="flex py-10 gap-20 sm:flex-col experiences-list">
+      <div className="flex-container">
         <ul>
           {data.map((experience, index) => (
             <li
