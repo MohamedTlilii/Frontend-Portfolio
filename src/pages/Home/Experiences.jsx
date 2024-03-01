@@ -32,6 +32,11 @@ function Experiences() {
         </ul>
 
         <div className="experience-details">
+          <img 
+          src={data[selectedItemIndex].image}
+          alt=""
+          className="experience-image" />
+          <div>
           <h1 className="experience-title">{data[selectedItemIndex].title}</h1>
           <h1 className="experience-company">
             {data[selectedItemIndex].company}
@@ -41,6 +46,7 @@ function Experiences() {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import SectionTitle from "../../components/SectionTitle";
 import { url } from "../../utils/url";
 import { useFetch } from "../../utils/useFetch";
+import { RingLoader } from "react-spinners";
 
 function Contact() {
   const { data, loading } = useFetch(`${url}contact`);
@@ -12,7 +13,7 @@ function Contact() {
 
       <div className="contact-content">
         <div className="contact-details">
-          {loading && <p>Loading...</p>}
+        
           {!loading && Array.isArray(data) && data.length > 0 && (
             <>
               {data.map((contact) => (
@@ -40,7 +41,7 @@ function Contact() {
               ))}
             </>
           )}
-          {!loading && !Array.isArray(data) && <p>No data available</p>}
+          {!loading && !Array.isArray(data) && <RingLoader color="#36d7b7" size={80} className="loading-spinner" />}
         </div>
         <div className="contact-animation">
           <lottie-player

@@ -27,6 +27,7 @@ function Intro() {
         </React.Fragment>
       )}
       <button className="intro-button">Get Started</button>
+      
     </div>
   );
 }

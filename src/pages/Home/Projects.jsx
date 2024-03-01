@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SectionTitle from "../../components/SectionTitle";
-import { url } from "../../utils/url";
+// import { url } from "../../utils/url";
 import { useFetch } from "../../utils/useFetch";
 
 function Projects() {
