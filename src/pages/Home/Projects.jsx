@@ -40,15 +40,16 @@ function Projects() {
           <div className="project-description">
             <h1>{data[selectedItemIndex].title}</h1>
             <p>{data[selectedItemIndex].description}</p>
-
-            <a
-              className="project-link"
-              href="https://eco-ride-electric-scooter.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit Website
-            </a>
+            <div>
+              <a
+                className="project-link"
+                href="https://eco-ride-electric-scooter.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Website
+              </a>
+            </div>
           </div>
         </div>
       </div>
