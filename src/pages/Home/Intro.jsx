@@ -5,6 +5,7 @@ import { RingLoader } from "react-spinners";
 
 function Intro() {
   const { data, loading } = useFetch(`${url}intro`);
+  console.log(data);
   const { welcomeText, firstName, lastName, description } =
     (data && data[0]) || {};
 
@@ -12,7 +13,7 @@ function Intro() {
     <div className="intro-container">
       {loading ? (
         <div className="loading-spinner-container">
-          <RingLoader color="#36d7b7" size={80} className="loading-spinner" />
+          <RingLoader color="#36d7b7" size={100} className="loading-spinner" />
         </div>
       ) : (
         <React.Fragment>
@@ -23,7 +24,14 @@ function Intro() {
           <p className="intro-description">{description}</p>
         </React.Fragment>
       )}
-      <a href="https://www.canva.com/design/DAF2zhCGAYM/upyjBwucq8HA-9GUMfq5Yw/view?utm_content=DAF2zhCGAYM&utm_campaign=designshare&utm_medium=link&utm_source=editor" className="intro-button" target="_blank" rel="noopener noreferrer">Resume</a>
+      <a
+        href="https://www.canva.com/design/DAF2zhCGAYM/upyjBwucq8HA-9GUMfq5Yw/view?utm_content=DAF2zhCGAYM&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+        className="intro-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Resume
+      </a>
     </div>
   );
 }
