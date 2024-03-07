@@ -6,16 +6,15 @@ import AdminAbout from "./AdminAbout";
 import AdminExperiences from "./AdminExperiences";
 import AdminProjects from "./AdminProjects";
 
-
 function Admin() {
   
   return (
-    <div>
-      <Header />
-      {/* {portfolioData && ( */}
-      <div className="mt-5 p-5">
-        <Tabs
+    <div className="admin-container" >
+      <Header  />
+      <div >
+        <Tabs 
           defaultActiveKey="1"
+          tabBarStyle={{ color: 'white' }} // Set the color of the tabs to white
           items={[
             {
               label: "Intro",
@@ -40,7 +39,6 @@ function Admin() {
           ]}
         />
       </div>
-      {/* )} */}
     </div>
   );
 }
