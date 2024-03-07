@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form } from "antd";
 import axios from "axios";
-import { urlAdmin } from "../../utils/url";
+// import { urlAdmin } from "../../utils/url";
 
 function AdminIntro() {
   const [formValues, setFormValues] = useState({
@@ -19,16 +19,17 @@ function AdminIntro() {
       [name]: value,
     });
   };
-  const handleSave = (id) => {
-    console.log("Sending request to URL:", `${urlAdmin}/updateintro`);
-    console.log("Data to be sent:", formValues);
 
-    // Send formValues to the server
-    axios.put(`${urlAdmin}/updateintro`,id, formValues)
+  const handleSave = () => {
+    axios
+      .put(
+        "https://backend-portfolio-bxkp.onrender.com/api/data/updateintro/65de6873d7a7bd8f4664f326",
+        formValues
+      )
       .then(() => {
         console.log("Data saved successfully!");
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error saving data:", error);
       });
   };
@@ -82,9 +83,7 @@ function AdminIntro() {
           />
         </Form.Item>
         <div>
-          <button className="save-button" type="submit" onClick={()=>{
-            handleSave()
-          }}>
+          <button className="save-button" type="button" onClick={handleSave}>
             SAVE
           </button>
         </div>
