@@ -61,38 +61,29 @@ function Projects() {
                 </a>
               </div>
 
-
-              <div className="technologies-list" style={{ marginTop: '20px' }}>
-  <h2 style={{ fontSize: '1.2rem', marginBottom: '10px' }}>Technologies:</h2>
-  <ul style={{ listStyleType: 'none', padding: '0' }}>
-    {data[selectedItemIndex].technologies.map((tech, index) => (
-      <li
-        key={index}
-        style={{
-          display: 'inline-block',
-          marginRight: '10px',
-          padding: '5px 10px',
-          backgroundColor: '#f0f0f0',
-          borderRadius: '5px',
-          border: '1px solid #ccc',
-          color: '#000', // Set text color to black
-        }}
-      >
-        {tech}
-      </li>
-    ))}
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-
+              <div className="technologies-list" style={{ marginTop: "20px" }}>
+                <h2 style={{ fontSize: "1.2rem", marginBottom: "10px" ,color:"#f97316"}}>
+                  Technologies
+                </h2>
+                <ul style={{ listStyleType: "none", padding: "0" }}>
+                  {data[selectedItemIndex].technologies.map((tech, index) => (
+                    <li
+                      key={index}
+                      style={{
+                        display: "inline-block",
+                        marginRight: "10px",
+                        padding: "5px 10px",
+                        backgroundColor: 'transparent',
+                        borderRadius: "5px",
+                        border: "1px solid hsl(148, 48%, 43%)", // Border color in HSL
+                        color: "hsl(148, 48%, 43%)", // Set text color to black
+                      }}
+                    >
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
