@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionTitle from "../../components/SectionTitle";
 // import { url } from "../../utils/url";
 import { useFetch } from "../../utils/useFetch";
@@ -10,6 +10,10 @@ function Projects() {
   );
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
+  // Log data to the console
+  // useEffect(() => {
+  //   console.log("Fetched Data:", data);
+  // }, [data]);
   if (!data || !Array.isArray(data) || data.length === 0) {
     return null; // Render nothing if data is not available
   }
@@ -49,13 +53,46 @@ function Projects() {
               <div>
                 <a
                   className="project-link"
-                  href="https://eco-ride-electric-scooter.netlify.app/"
+                  href={data[selectedItemIndex].link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Website
                 </a>
               </div>
+
+
+              <div className="technologies-list" style={{ marginTop: '20px' }}>
+  <h2 style={{ fontSize: '1.2rem', marginBottom: '10px' }}>Technologies:</h2>
+  <ul style={{ listStyleType: 'none', padding: '0' }}>
+    {data[selectedItemIndex].technologies.map((tech, index) => (
+      <li
+        key={index}
+        style={{
+          display: 'inline-block',
+          marginRight: '10px',
+          padding: '5px 10px',
+          backgroundColor: '#f0f0f0',
+          borderRadius: '5px',
+          border: '1px solid #ccc',
+          color: '#000', // Set text color to black
+        }}
+      >
+        {tech}
+      </li>
+    ))}
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
             </div>
           </div>
         </div>

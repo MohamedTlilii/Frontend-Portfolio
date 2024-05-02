@@ -1,4 +1,5 @@
 import React from "react";
+// import "./LeftSideBar.scss";
 
 function LeftSider() {
   return (
@@ -25,4 +26,3 @@ function LeftSider() {
 }
 
 export default LeftSider;
-
